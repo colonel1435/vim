@@ -64,6 +64,12 @@ Plugin 'ccvext.vim'
 Plugin 'cSyntaxAfter'
 Plugin 'genutils'
 Plugin 'lookupfile'
+Plugin 'std_c.zip'
+Plugin 'Mark--Karkat'
+Plugin 'c.vim'
+Plugin 'cpp.vim'
+Plugin 'repeat.vim'
+Plugin 'surround.vim'
 "Plugin 'tpope/vim-fugitive'
 Plugin 'file:///work/softw/vim-plugin/taglist-46/plugin'
 
@@ -140,8 +146,10 @@ if has('gui_running')
 else
     set background=light
     colorscheme desert
-    let g:neocomplcache_enable_at_startup=1
+"    let g:neocomplcache_enable_at_startup=1
 endif
+"************************** cSyntaxAfter config *************************""
+autocmd! BufRead, BufNewFile, BufEnter FileType c,cpp,java,php,py call CSyntaxAfter()
 "************************** ctags config *************************""
 nmap <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
@@ -156,6 +164,10 @@ let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
 " let Tlist_Use_Left_Window=1
 nmap <S-l> :TlistToggle<CR>
+
+"************************* ccvext  config ***********************"
+"<leader>sy auto gen tags & cscope
+"<leader>sc connect tags & cscope
 
 "************************* poweline config ***********************"
 let g:Powerline_symbols='unicode'
@@ -245,10 +257,10 @@ nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap <C-\>i :cs find i <C-R>=expand("<cfile>")<CR><CR> 
 
 "************************* miniBufExplor config *******************"
-let g:miniBufExplMapWindowNavVim=1  " ctrl+h/j/k/l
-let g:miniBufExplMapWindowNavArrows=1   " ctrl+arrow
-let g:miniBufExplMapCTabSwitchBufs=1    " ctrl+tab
-let g:miniBufExplMapModeSelTarget=1    " editable window
+"let g:miniBufExplMapWindowNavVim=1  " ctrl+h/j/k/l
+"let g:miniBufExplMapWindowNavArrows=1   " ctrl+arrow
+"let g:miniBufExplMapCTabSwitchBufs=1    " ctrl+tab
+"let g:miniBufExplMapModeSelTarget=1    " editable window
 
 "************************* Winmanager config *********************"
 let g:winManagerWindowLayout = "BufExplorer,TagList"
