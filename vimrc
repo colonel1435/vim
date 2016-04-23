@@ -59,7 +59,7 @@ if g:isLinux
     call vundle#begin()
 else
     set rtp+=$VIM/vimfiles/bundle/Vundle.vim       " set the runtime path to include Vundle and initialize
-    call vundle#begin('$VIM/vimfiles/bundle/')
+    call vundle#begin()
 endif    
         
 Plugin 'VundleVim/Vundle.vim'           " let Vundle manage Vundle, required
