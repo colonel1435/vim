@@ -338,7 +338,7 @@ let g:airline#extensions#tabline#buffer_nr_show=1
 let g:airline#extentions#bufferline#enabled=1
 let g:airline#extentions#bufferline#overwrite_variables=1
 nnoremap <C-N> :bn<CR>
-nnoremap <C-M> :bp<CP>
+nnoremap <C-M> :bp<CR>
 let g:airline#extensions#whitespace#enabled=0
 let g:airline#extensions#whitespace#symbol='!'
 "let g:airline_left_sep='>>'
