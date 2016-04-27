@@ -68,7 +68,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'majutsushi/tagbar'
 Plugin 'taglist.vim'
 Plugin 'winmanager'
-Plugin 'minibufexpl.vim'
+"Plugin 'minibufexpl.vim'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'Shougo/neocomplcache'
 Plugin 'scrooloose/nerdcommenter'
@@ -326,6 +326,9 @@ let g:ctrlp_max_height=15
 let g:ctrlp_match_window_reversed=0
 let g:ctrlp_mruf_max=500
 let g:ctrlp_follow_symlinks=1
+let g:ctrlp_switch_buffer='Et'
+let g:ctrlp_tabpage_position='ac'
+let g:ctrlp_cache_dir=$HOME.'/.cache/ctrlp'
 "************************* ctrlp-funky config ***********************"
 nnoremap fu :CtrlPFunky<CR>
 nnoremap fcu :execute 'CtrlPFunky ' . expand('<cword>')<CR>
@@ -392,6 +395,7 @@ let g:airline#extensions#quickfix#location_text='Location'
 let g:airline#extensions#ctrlp#color_template='insert'
 let g:airline#extensions#ycm#enabled=1
 "************************* Shortcuts *****************************"
+inoremap <C-c> <ESC>`^
 nmap ww :w<CR>			" save
 nmap qq :q<CR>			" exit
 nmap qw :q!<CR>			" !Q
