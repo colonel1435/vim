@@ -251,7 +251,10 @@ let g:LookupFile_AllowNewFiles = 0
 if filereadable("./filenamestags")
 let g:LookupFile_TagExpr = '"./filenametags"'
 endif
-nmap <C-l> :LookupFile<CR>
+"nmap <C-l> :LookupFile<CR>
+nmap <leader>ll :LookupFile<CR>
+nmap <leader>lk :LUBufs<CR>
+nmap <leader>lw :LUWalk<CR>
 
 "****************************** cscope config *********************"
 if has("cscope")
