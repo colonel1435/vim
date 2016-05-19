@@ -1,6 +1,4 @@
-" ******************************************************************"
-"        << Judge which system, windows or linux >>                 "
-" ******************************************************************"
+" ******************************************************************" "        << Judge which system, windows or linux >>                 " " ******************************************************************"
 let g:isWindows = 0
 let g:isLinux = 0
 if (has("win32") || has("win64") || has("win95") || has("win16"))
@@ -81,7 +79,7 @@ Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'bing/vim-bufferline'
 Plugin 'szw/vim-ctrlspace'
 Plugin 'kien/ctrlp.vim'
-"Plugin 'tacahiroy/ctrip-funky'
+Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'vim-scripts/a.vim'
 Plugin 'vim-scripts/EasyGrep'
 Plugin 'brookhong/cscope.vim'
@@ -352,8 +350,7 @@ let g:NERDTredShowLineNumber=1
 let g:NERDTreeShowBookmarks=1
 nnoremap <S-t> :NERDTree<CR>
 "************************* Vim-airline config ***********************"
-"let airline_theme='luna'
-"let g:airline_theme='dark'
+let airline_theme='luna'
 let g:airline_theme='simple' " luna dark cool light 
 let g:airline_powerline_fonts=1
 if !exists('g:airline_symbols')
@@ -382,8 +379,8 @@ let g:airline_left_alt_sep = '< '
 let g:airline_symbols.linenr='L'
 let g:airline_symbols.branch='⑆'
 let g:airline_symbols.paste='☻'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '◀'
+let g:airline_left_sep = ' ▶'
+let g:airline_right_sep = ' ◀'
 let g:airline_detect_modified=1
 let g:airline_detect_paste=1
 let g:airline_detect_crypt=1
