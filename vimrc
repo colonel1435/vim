@@ -66,6 +66,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'majutsushi/tagbar'
 Plugin 'taglist.vim'
 Plugin 'winmanager'
+"Plugin 'EasyMotion'
 "Plugin 'minibufexpl.vim'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'Shougo/neocomplcache'
@@ -77,7 +78,8 @@ Plugin 'davidhalter/jedi'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'bing/vim-bufferline'
-Plugin 'szw/vim-ctrlspace'
+"Plugin 'szw/vim-ctrlspace'
+Plugin 'vim-ctrlspace/vim-ctrlspace'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'vim-scripts/a.vim'
@@ -100,7 +102,7 @@ Plugin 'cpp.vim'
 Plugin 'repeat.vim'
 Plugin 'surround.vim'
 "Plugin 'tpope/vim-fugitive'
-Plugin 'file:///work/softw/vim-plugin/taglist-46/plugin'
+"Plugin 'file:///work/softw/vim-plugin/taglist-46/plugin'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -346,6 +348,24 @@ let g:EasygrepCommand=0
 let g:EasygrepRecursive=1
 let g:EasygrepIgnoreCase=1
 let g:EasygrepFilesToExclude="*.bak,*~,cscope.*,*.a,*.o,*.pyc"
+"************************* Easymotion config ***********************"
+"let g:EasyMotion_leader_key = '<Leader>'
+"************************* vim-Easymotion config ***********************"
+" <Leader>f{char} to move to {char}
+map  <Leader>c <Plug>(easymotion-bd-f)
+nmap <Leader>c <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+map <Leader>l <Plug>(easymotion-bd-jk)
+nmap <Leader>l <Plug>(easymotion-overwin-line)
+
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
+
 "************************* NERDTree config ***********************"
 let g:NERDTreeWinPos="right"
 let g:NERDTreeWinSize=30
