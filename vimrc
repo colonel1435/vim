@@ -186,6 +186,7 @@ nmap <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 "************************** Tagbar config ***********************"
 let g:tagbar_ctags_bin='ctags'
+let g:tagbar_left = 1
 let g:tagbar_width=30
 nmap <S-b> :TagbarToggle<CR>
 "autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
