@@ -120,6 +120,8 @@ filetype plugin on
 filetype plugin indent on
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,gbk,cp936,latin-1
+set encoding=utf-8
+language messages zh_CN.utf-8
 if (g:isWindows && g:isGUI)
         source $VIMRUNTIME/delmenu.vim
         source $VIMRUNTIME/menu.vim
