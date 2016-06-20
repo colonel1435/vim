@@ -64,12 +64,12 @@ Plugin 'VundleVim/Vundle.vim'           " let Vundle manage Vundle, required
 "< plugin on GitHub repo>
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'majutsushi/tagbar'
-Plugin 'taglist.vim'
+"Plugin 'taglist.vim'
 Plugin 'winmanager'
 "Plugin 'EasyMotion'
 "Plugin 'minibufexpl.vim'
 Plugin 'Lokaltog/vim-powerline'
-Plugin 'Shougo/neocomplcache'
+"Plugin 'Shougo/neocomplcache'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
@@ -102,7 +102,6 @@ Plugin 'cpp.vim'
 Plugin 'repeat.vim'
 Plugin 'surround.vim'
 "Plugin 'tpope/vim-fugitive'
-"Plugin 'file:///work/softw/vim-plugin/taglist-46/plugin'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -192,10 +191,10 @@ nmap <S-b> :TagbarToggle<CR>
 "autocmd BufReadPost *.cpp,*.c,*.h,*.hpp,*.cc,*.cxx call tagbar#autoopen()
 "************************** Taglist config ***********************"
 "let Tlist_Ctags_Cmd='usr/local/bin/ctags'
-let Tlist_Show_One_File=1
-let Tlist_Exit_OnlyWindow=1
+"let Tlist_Show_One_File=1
+"let Tlist_Exit_OnlyWindow=1
 " let Tlist_Use_Left_Window=1
-nmap <S-l> :TlistToggle<CR>
+"nmap <S-l> :TlistToggle<CR>
 
 "************************* ccvext  config ***********************"
 "<leader>sy auto gen tags & cscope
