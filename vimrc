@@ -65,7 +65,7 @@ Plugin 'VundleVim/Vundle.vim'           " let Vundle manage Vundle, required
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'majutsushi/tagbar'
 "Plugin 'taglist.vim'
-Plugin 'winmanager'
+"Plugin 'winmanager'
 "Plugin 'EasyMotion'
 "Plugin 'minibufexpl.vim'
 Plugin 'Lokaltog/vim-powerline'
@@ -299,10 +299,10 @@ nmap <C-\>i :cs find i <C-R>=expand("<cfile>")<CR><CR>
 "let g:miniBufExplMapModeSelTarget=1    " editable window
 
 "************************* Winmanager config *********************"
-let g:winManagerWindowLayout = "BufExplorer,TagList"
-let g:winManagerWidth = 30
-let g:defaultExplorer = 0
-nmap <slient> <F11> :WMToggle<CR>
+"let g:winManagerWindowLayout = "BufExplorer,TagList"
+"let g:winManagerWidth = 30
+"let g:defaultExplorer = 0
+"nmap <slient> <F11> :WMToggle<CR>
 "let g:AutoOpenWinmanager = 1
 
 "************************* ctrlspace config ***********************"
