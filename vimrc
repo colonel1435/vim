@@ -20,7 +20,8 @@ if g:isWindows
 	source $VIMRUNTIME/vimrc_example.vim
 	source $VIMRUNTIME/mswin.vim
 	behave mswin
-
+	set termencoding=chinese
+	set fileencoding=chinese
 	set diffexpr=MyDiff()
 	function MyDiff()
 	  let opt = '-a --binary '
@@ -45,6 +46,9 @@ if g:isWindows
 	  endif
 	  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 	endfunction
+elseif g:isLinux:
+	let &termencoding=&encoding
+	set fileencoding=utf-8,gbk,ucs-bom,cp936
 endif
 "**********************   linux vim/gvim default config ***********""
 
@@ -57,7 +61,7 @@ if g:isLinux
     call vundle#begin()
 else
     set rtp+=$VIM/vimfiles/bundle/Vundle.vim       " set the runtime path to include Vundle and initialize
-    call vundle#begin()
+    call vundle#begin('$VIM/vimfiles/bundle')
 endif    
         
 Plugin 'VundleVim/Vundle.vim'           " let Vundle manage Vundle, required
@@ -84,7 +88,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'vim-scripts/a.vim'
 Plugin 'vim-scripts/EasyGrep'
-Plugin 'brookhong/cscope.vim'
+"Plugin 'brookhong/cscope.vim'
 Plugin 'tomasr/molokai'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'Lokaltog/vim-easymotion'
@@ -125,11 +129,16 @@ if (g:isWindows && g:isGUI)
         source $VIMRUNTIME/delmenu.vim
         source $VIMRUNTIME/menu.vim
         language messages zh_CN.UTF-8
+		set langmenu=zh_CN.UTF-8
 endif       
+if exists("&ambiwidth")
+	set ambiwidth=double
+endif
 set ttimeoutlen=50
 set t_Co=256
 set hidden
-set nu				" show number
+set number				" show number
+set relativenumber
 set autoread
 set expandtab 		" replace tab with space
 set foldcolumn=0	" fold column
