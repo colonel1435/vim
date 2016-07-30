@@ -141,6 +141,7 @@ set number				" show number
 set relativenumber
 set autoread
 set expandtab 		" replace tab with space
+set fdm=indent
 set foldcolumn=0	" fold column
 set foldenable		" enable fold
 set foldlevel=4		" fold level
@@ -285,21 +286,21 @@ if has("cscope")
         set csverb
 endif
 " s: Finds all uses of this symbol
-nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>  
+nmap <c-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>  
 " g: Finds definition of this symbol
-nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR> 
+nmap <c-\>g :cs find g <C-R>=expand("<cword>")<CR><CR> 
 " d: Finds calls by this function
-nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+nmap <c-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 " c: Finds calls to this function
-nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <c-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
 " t: Find assignments to
-nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR> 
+nmap <c-\>t :cs find t <C-R>=expand("<cword>")<CR><CR> 
 " e: Find this egrep pattern
-nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR> 
+nmap <c-\>e :cs find e <C-R>=expand("<cword>")<CR><CR> 
 " f: Opens the filename under the cursor
-nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR> 
+nmap <c-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR> 
 " i: Find files #including this file
-nmap <C-\>i :cs find i <C-R>=expand("<cfile>")<CR><CR> 
+nmap <c-\>i :cs find i <C-R>=expand("<cfile>")<CR><CR> 
 
 "************************* miniBufExplor config *******************"
 "let g:miniBufExplMapWindowNavVim=1  " ctrl+h/j/k/l
@@ -363,19 +364,19 @@ let g:EasygrepFilesToExclude="*.bak,*~,cscope.*,*.a,*.o,*.pyc"
 "let g:EasyMotion_leader_key = '<Leader>'
 "************************* vim-Easymotion config ***********************"
 " <Leader>f{char} to move to {char}
-map  <Leader>c <Plug>(easymotion-bd-f)
-nmap <Leader>c <Plug>(easymotion-overwin-f)
+map  <Leader>mc <Plug>(easymotion-bd-f)
+nmap <Leader>mc <Plug>(easymotion-overwin-f)
 
 " s{char}{char} to move to {char}{char}
 nmap s <Plug>(easymotion-overwin-f2)
 
 " Move to line
-map <Leader>l <Plug>(easymotion-bd-jk)
-nmap <Leader>l <Plug>(easymotion-overwin-line)
+map <Leader>ml <Plug>(easymotion-bd-jk)
+nmap <Leader>ml <Plug>(easymotion-overwin-line)
 
 " Move to word
-map  <Leader>w <Plug>(easymotion-bd-w)
-nmap <Leader>w <Plug>(easymotion-overwin-w)
+map  <Leader>mw <Plug>(easymotion-bd-w)
+nmap <Leader>mw <Plug>(easymotion-overwin-w)
 
 "************************* NERDTree config ***********************"
 let g:NERDTreeWinPos="right"
