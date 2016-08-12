@@ -46,9 +46,9 @@ if g:isWindows
 	  endif
 	  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3 . eq
 	endfunction
-elseif g:isLinux:
+elseif g:isLinux
 	let &termencoding=&encoding
-	set fileencoding=utf-8,gbk,ucs-bom,cp936
+	set fileencodings=ucs-bom,utf-8,gbk,cp936,latin-1
 endif
 "**********************   linux vim/gvim default config ***********""
 
@@ -71,7 +71,7 @@ Plugin 'majutsushi/tagbar'
 "Plugin 'taglist.vim'
 "Plugin 'winmanager'
 "Plugin 'EasyMotion'
-"Plugin 'minibufexpl.vim'
+"Plugin 'fholgado/minibufexpl.vim'
 Plugin 'Lokaltog/vim-powerline'
 "Plugin 'Shougo/neocomplcache'
 Plugin 'scrooloose/nerdcommenter'
@@ -81,14 +81,12 @@ Plugin 'scrooloose/syntastic'
 Plugin 'davidhalter/jedi'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'bing/vim-bufferline'
-"Plugin 'szw/vim-ctrlspace'
 Plugin 'vim-ctrlspace/vim-ctrlspace'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'vim-scripts/a.vim'
 Plugin 'vim-scripts/EasyGrep'
-"Plugin 'brookhong/cscope.vim'
+Plugin 'brookhong/cscope.vim'
 Plugin 'tomasr/molokai'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'Lokaltog/vim-easymotion'
@@ -105,8 +103,10 @@ Plugin 'c.vim'
 Plugin 'cpp.vim'
 Plugin 'repeat.vim'
 Plugin 'surround.vim'
-"Plugin 'tpope/vim-fugitive'
-
+Plugin 'Yggdroot/indentLine'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tell-k/vim-autopep8'
+Plugin 'nathanaelkane/vim-indent-guides'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -122,7 +122,6 @@ filetype on
 filetype plugin on
 filetype plugin indent on
 set fileencoding=utf-8
-set fileencodings=ucs-bom,utf-8,gbk,cp936,latin-1
 set encoding=utf-8
 language messages zh_CN.utf-8
 if (g:isWindows && g:isGUI)
@@ -140,7 +139,7 @@ set hidden
 set number				" show number
 set relativenumber
 set autoread
-set expandtab 		" replace tab with space
+"set expandtab 		" replace tab with space
 set fdm=indent
 set foldcolumn=0	" fold column
 set foldenable		" enable fold
@@ -152,9 +151,21 @@ set hlsearch			" highlight search result
 set ignorecase smartcase" ignore case
 set incsearch			" show result
 set nowrapscan			" no scan on rear or tail
+set cindent
 set tabstop=4			" tab 4 char
 set smartindent			" smart indent
+set shiftwidth=4
+set showmatch
+set fenc=utf-8
 set cursorline    "" highlight current line
+au BufNewFile, BufRead *.py
+\ set tabstop=4
+\ set softtabstop=4
+\ set shiftwidth=4
+\ set textwidth=79
+\ set expandtab
+\ set autoindent
+\ set fileformat=unix
 if g:isLinux
     set tags=./tags
 else
@@ -190,6 +201,7 @@ else
     colorscheme desert
 "    let g:neocomplcache_enable_at_startup=1
 endif
+let g:solarized_termcolors=256
 "************************** cSyntaxAfter config *************************""
 autocmd! BufRead, BufNewFile, BufEnter FileType c,cpp,java,php,py call CSyntaxAfter()
 "************************** ctags config *************************""
@@ -368,7 +380,7 @@ map  <Leader>mc <Plug>(easymotion-bd-f)
 nmap <Leader>mc <Plug>(easymotion-overwin-f)
 
 " s{char}{char} to move to {char}{char}
-nmap s <Plug>(easymotion-overwin-f2)
+nmap z <Plug>(easymotion-overwin-f2)
 
 " Move to line
 map <Leader>ml <Plug>(easymotion-bd-jk)
@@ -426,6 +438,23 @@ let g:airline#extensions#quickfix#quickfix_text='Quickfix'
 let g:airline#extensions#quickfix#location_text='Location'
 let g:airline#extensions#ctrlp#color_template='insert'
 let g:airline#extensions#ycm#enabled=1
+"************************* indentLine *****************************"
+if g:isGUI
+    let g:indentLine_color_gui='#A4E57E'
+    let g:indentLine_char = '¦'
+    let g:indentLine_first_char = '¦'
+else
+    let g:indentLine_color_term=239
+endif
+
+let g:indentLine_enabled=0
+let g:indentLine_fileType=['c','cpp','py']
+nmap <leader>il :IndentLinesToggle<CR>
+"************************* indent-guide *****************************"
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+
 "************************* Shortcuts *****************************"
 inoremap <C-c> <ESC>`^
 nmap ww :w<CR>			" save
