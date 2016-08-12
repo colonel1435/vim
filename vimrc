@@ -105,8 +105,9 @@ Plugin 'repeat.vim'
 Plugin 'surround.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tell-k/vim-autopep8'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'klen/python-mode'
+Plugin 'terryma/vim-multiple-cursors'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
