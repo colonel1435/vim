@@ -381,7 +381,7 @@ map  <Leader>mc <Plug>(easymotion-bd-f)
 nmap <Leader>mc <Plug>(easymotion-overwin-f)
 
 " s{char}{char} to move to {char}{char}
-nmap z <Plug>(easymotion-overwin-f2)
+nmap m <Plug>(easymotion-overwin-f2)
 
 " Move to line
 map <Leader>ml <Plug>(easymotion-bd-jk)
@@ -456,6 +456,9 @@ let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
+"************************* python-mode  *****************************"
+let g:pymode_run_bind = '<leader>r'
+let g:pymode = 0
 "************************* Shortcuts *****************************"
 inoremap <C-c> <ESC>`^
 nmap ww :w<CR>			" save
