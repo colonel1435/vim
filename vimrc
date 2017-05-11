@@ -108,6 +108,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'klen/python-mode'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'conqueterm'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -123,6 +124,7 @@ filetype on
 filetype plugin on
 filetype plugin indent on
 set fileencoding=utf-8
+set fileencodings=ucs-bom,utf-8,gbk,cp936,latin-1
 set encoding=utf-8
 language messages zh_CN.utf-8
 if (g:isWindows && g:isGUI)
@@ -130,6 +132,8 @@ if (g:isWindows && g:isGUI)
         source $VIMRUNTIME/menu.vim
         language messages zh_CN.UTF-8
 		set langmenu=zh_CN.UTF-8
+        set guifont=courier_new:h12:cANSI
+        "set guifont=Space-Mono-for-Powerline:h12:cANSI
 endif       
 if exists("&ambiwidth")
 	set ambiwidth=double
@@ -141,9 +145,9 @@ set number				" show number
 set relativenumber
 set autoread
 "set expandtab 		" replace tab with space
-set fdm=indent
+"set fdm=indent
 set foldcolumn=0	" fold column
-set foldenable		" enable fold
+"set foldenable		" enable fold
 set foldlevel=4		" fold level
 set nowb			" no swap
 set ruler			" set ruler
@@ -159,6 +163,7 @@ set shiftwidth=4
 set showmatch
 set fenc=utf-8
 set cursorline    "" highlight current line
+set scrolloff=0
 au BufNewFile, BufRead *.py
 \ set tabstop=4
 \ set softtabstop=4
@@ -166,7 +171,7 @@ au BufNewFile, BufRead *.py
 \ set textwidth=79
 \ set expandtab
 \ set autoindent
-\ set fileformat=unix
+set ambiwidth=double    " Double word
 if g:isLinux
     set tags=./tags
 else
@@ -188,10 +193,10 @@ if g:isGUI
 "        set shortmess=atI "" del welcome ui
 endif        
 
-imap <c-k> <Up>
-imap <c-j> <Down>
-imap <c-h> <Left>
-imap <c-k> <Right>
+"imap <c-k> <Up>
+"imap <c-j> <Down>
+"imap <c-h> <Left>
+"imap <c-k> <Right>
 "************************** solarized config *************************""
 syntax on
 if has('gui_running')
