@@ -467,6 +467,14 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 let g:pymode_run_bind = '<leader>r'
 let g:pymode = 0
 "************************* Shortcuts *****************************"
+"************************* emment *****************************"
+let g:user_emmet_mode='a'
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+let g:user_emmet_leader_key='<S-H>'
+"************************* mul-line select *****************************"
+let g:multi_cursor_start_key='<S-M>'
+
 inoremap <C-c> <ESC>`^
 nmap ww :w<CR>			" save
 nmap qq :q<CR>			" exit
