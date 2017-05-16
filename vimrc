@@ -108,7 +108,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'klen/python-mode'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'conqueterm'
+Plugin 'Conque-Shell'
+Plugin 'mattn/emmet-vim'
+Plugin 'ternjs/tern_for_vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -163,7 +165,7 @@ set shiftwidth=4
 set showmatch
 set fenc=utf-8
 set cursorline    "" highlight current line
-set scrolloff=0
+"set scrolloff=0
 au BufNewFile, BufRead *.py
 \ set tabstop=4
 \ set softtabstop=4
@@ -255,7 +257,7 @@ inoremap <expr> <Down> pumvisible()? "\<C-n>" :"\<Down>"
 inoremap <expr> <Up> pumvisible()? "\<C-p>" : "\<Up>"
 inoremap <expr> <PageDown> pumvisible()? "\<PageDown>\<C-p>\<C-n>" : "\<PageDown>"
 inoremap <expr> <PageUp> pumvisible()? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
-let g:ycm_global_ycm_extra_conf='/home/imotor11/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf='D:/workspace/common/vim/vimfiles/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_key_list_select_completion = ['<Down>']
 let g:ycm_key_list_previous_completion = ['<Up>']
 let g:ycm_confirm_extra_conf=0
