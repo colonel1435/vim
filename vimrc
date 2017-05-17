@@ -474,6 +474,10 @@ autocmd FileType html,css EmmetInstall
 let g:user_emmet_leader_key='<S-H>'
 "************************* mul-line select *****************************"
 let g:multi_cursor_start_key='<S-M>'
+let g:multi_cursor_next_key='<C-j>'
+let g:multi_cursor_prev_key='<C-k>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
 
 inoremap <C-c> <ESC>`^
 nmap ww :w<CR>			" save
