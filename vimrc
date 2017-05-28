@@ -105,6 +105,7 @@ Plugin 'repeat.vim'
 Plugin 'surround.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'klen/python-mode'
 Plugin 'terryma/vim-multiple-cursors'
@@ -478,6 +479,22 @@ let g:multi_cursor_next_key='<C-j>'
 let g:multi_cursor_prev_key='<C-k>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
+"************************* Git gitgutter *****************************"
+let g:gitgutter_map_keys = 0
+let g:gitgutter_enabled = 0
+let g:gitgutter_highlight_lines = 1
+nnoremap <leader>gg :GitGutterToggle<CR>
+"************************* Git fugitive *****************************"
+":Gdiff  :Gstatus :Gvsplit
+" not ready to open
+"nmap <leader>gb maps to :Gblame<CR>
+noremap <leader>gs maps to :Gstatus<CR>
+noremap <leader>gd maps to :Gdiff<CR>
+noremap <leader>gl maps to :Glog<CR>
+noremap <leader>ga maps to :Git add<CR>
+noremap <leader>gc maps to :Gcommit<CR>
+noremap <leader>gps maps to :Git push<CR>
+noremap <leader>gpl maps to :Git pull<CR>
 
 inoremap <C-c> <ESC>`^
 nmap ww :w<CR>			" save
