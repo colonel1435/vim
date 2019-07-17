@@ -112,6 +112,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Conque-Shell'
 Plugin 'mattn/emmet-vim'
 Plugin 'ternjs/tern_for_vim'
+Plugin 'zxqfl/tabnine-vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
